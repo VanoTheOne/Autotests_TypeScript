@@ -7,39 +7,39 @@ export default class AccountMenu extends Base {
   }
 
   get accountMenuButton() {
-    return this.page.locator('//nav[@id="imdbHeader"]//div[contains (@class, "navbar__flyout--breakpoint-m")]//label[contains (@class, "navbar__user-menu-toggle__button")]');
+    return this.page.locator('#imdbHeader label.navbar__user-menu-toggle__button');
   }
 
   get accountMenuYourProfileButton() {
-    return this.page.locator('//nav[@id="imdbHeader"]//span[@id="navUserMenu-contents"]//span[contains (text(), "Your profile")]/..');
+    return this.page.locator('#navUserMenu-contents [href="/profile/?ref_=hm_nv_profile"]');
   }
 
   get accountMenuYourWatchlistButton() {
-    return this.page.locator('//nav[@id="imdbHeader"]//span[@id="navUserMenu-contents"]//span[contains (text(), "Your Watchlist")]/..');
+    return this.page.locator('#navUserMenu-contents [href="/list/watchlist/?ref_=hm_nv_wls"]');
   }
 
   get accountMenuYourRatingsButton() {
-    return this.page.locator('//nav[@id="imdbHeader"]//span[@id="navUserMenu-contents"]//span[contains (text(), "Your ratings")]/..');
+    return this.page.locator('#navUserMenu-contents [href="/list/ratings/?ref_=hm_nv_rat"]');
   }
 
   get accountMenuYourListsButton() {
-    return this.page.locator('//nav[@id="imdbHeader"]//span[@id="navUserMenu-contents"]//span[contains (text(), "Your lists")]/..');
+    return this.page.locator('#navUserMenu-contents [href="/profile/lists/?ref_=hm_nv_lst"]');
   }
 
   get accountMenuYourInterestsButton() {
-    return this.page.locator('//nav[@id="imdbHeader"]//span[@id="navUserMenu-contents"]//span[contains (text(), "Your interests")]/..');
+    return this.page.locator('#navUserMenu-contents [href="/list/interests/?ref_=hm_nv_in"]');
   }
 
   get accountMenuYourWatchHistoryButton() {
-    return this.page.locator('//nav[@id="imdbHeader"]//span[@id="navUserMenu-contents"]//span[contains (text(), "Your watch history")]/..');
+    return this.page.locator('#navUserMenu-contents [href="/list/watchhistory/?ref_=hm_nv_wtchd"]');
   }
 
   get accountMenuAccountSettingsButton() {
-    return this.page.locator('//nav[@id="imdbHeader"]//span[@id="navUserMenu-contents"]//span[contains (text(), "Account settings")]/..');
+    return this.page.locator('#navUserMenu-contents [href="/registration/accountsettings/?ref_=hm_nv_pers"]');
   }
 
   get accountMenuSignOutButton() {
-    return this.page.locator('//nav[@id="imdbHeader"]//span[@id="navUserMenu-contents"]//span[contains (text(), "Sign out")]/..');
+    return this.page.locator('#navUserMenu-contents [href="/registration/logout/?u=%2F&ref_=hm_nv_lgout"]');
   }
 
   async openUserProfile() {

@@ -7,43 +7,43 @@ export default class EditProfilePage extends Base {
   }
 
   get editUsernameButton() {
-    return this.page.locator('//div[@data-testid="user-info-username"]//button[@data-testid="user-info-edit"]');
+    return this.page.locator('[data-testid="user-info-username"] [data-testid="user-info-edit"]');
   }
 
   get editUserBioButton() {
-    return this.page.locator('//div[@data-testid="user-info-bio"]//button[@data-testid="user-info-edit"]');
+    return this.page.locator('[data-testid="user-info-bio"] [data-testid="user-info-edit"]');
   }
 
   get uploadImageButton() {
-    return this.page.locator('//div[@data-testid="upe-image-editor-section"]//button[@data-testid="upe-image-select-uploadBtn"]');
+    return this.page.locator('[data-testid="upe-image-editor-section"] [data-testid="upe-image-select-uploadBtn"]');
   }
 
-  get usernameField() {
-    return this.page.locator('//div[@class="ipc-promptable-base__content"]//input[@name="username-edit"]');
+  get usernameInputField() {
+    return this.page.locator('#text-input__0');
   }
 
-  get userBioField() {
-    return this.page.locator('//div[@data-testid="promptable__pc"]//textarea[@id="textarea__0"]');
+  get userBioInputField() {
+    return this.page.locator('#textarea__0');
   }
 
   get saveChangesButton() {
-    return this.page.locator('//div[@class="ipc-promptable-base__content"]//button[@data-testid="prompt-saveButton"]');
+    return this.page.locator('[data-testid="user-info-username-prompt"] [data-testid="prompt-saveButton"]');
   }
 
   get backButton() {
-    return this.page.locator('//div[@data-testid="edit-header"]//a[@data-testid="edit-header-back"]');
+    return this.page.locator('[data-testid="edit-header"] [data-testid="edit-header-back"]');
   }
 
   get editUsernameDialog() {
-    return this.page.locator('div[role="dialog"]');
+    return this.page.locator('[role="dialog"]');
   }
 
   async changeUsername(newUsername: string) {
     await this.page.waitForTimeout(2000);
     await this.editUsernameButton.click();
     await this.editUsernameDialog.waitFor({ state: 'visible' });
-    await this.usernameField.click();
-    await this.usernameField.fill(newUsername);
+    await this.usernameInputField.click();
+    await this.usernameInputField.fill(newUsername);
     await this.saveChangesButton.click();
   }
 
@@ -51,8 +51,8 @@ export default class EditProfilePage extends Base {
     await this.page.waitForTimeout(2000);
     await this.editUserBioButton.click();
     await this.editUsernameDialog.waitFor({ state: 'visible' });
-    await this.userBioField.click();
-    await this.userBioField.fill(newUserBio);
+    await this.userBioInputField.click();
+    await this.userBioInputField.fill(newUserBio);
     await this.saveChangesButton.click();
   }
 

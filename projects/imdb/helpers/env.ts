@@ -1,3 +1,2 @@
-
-export const login: string = `van0the0ne@gmail.com`;
-export const password: string = `3rNG?kDfBbBXVY!`;
+export const login = `van0the0ne@gmail.com`;
+export const password = `yydn&5ncX?rqP4F`;

@@ -7,19 +7,19 @@ export default class ProfilePage extends Base {
   }
 
   get editProfileButton() {
-    return this.page.locator('//div[@data-testid="up-header"]//a[contains (@class, "ipc-btn ipc-btn--single-padding")]');
+    return this.page.locator('[data-testid="up-header"] a');
   }
 
   get userBio() {
-    return this.page.locator('//div[@data-testid="up-header"]//div[@class="ipc-html-content-inner-div"]');
+    return this.page.locator('[data-testid="up-header"] div.ipc-html-content-inner-div');
   }
 
   get exploreBadgesButton() {
-    return this.page.locator('//section[@data-testid="user-badges-feature"]//a[@data-testid="bdg-shoveler-cta"]');
+    return this.page.locator('[data-testid="user-badges-feature"] [data-testid="bdg-shoveler-cta"]');
   }
 
   get settingsButton() {
-    return this.page.locator('//div[@data-testid="up-header"]//button[@title="Settings"]');
+    return this.page.locator('[data-testid="up-header"] [title="Settings"]');
   }
 
   async openEditProfilePage() {
