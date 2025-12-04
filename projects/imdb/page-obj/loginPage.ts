@@ -1,15 +1,15 @@
 import Base from './base';
 import Header from './header/header';
 import { login, password } from '../helpers/env';
-import { expect, Page, Browser } from '@playwright/test';
+import { expect, Page } from '@playwright/test';
 
 export default class LoginPage extends Base {
   public header: Header;
 
-  constructor(page: Page, browser: Browser) {
-    super(page, browser);
+  constructor(page: Page) {
+    super(page);
 
-    this.header = new Header(page, browser);
+    this.header = new Header(page);
   }
 
   get signInToExistingAccountButton() {

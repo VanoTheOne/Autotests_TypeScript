@@ -8,10 +8,10 @@ test.describe(`Header tests`, function () {
   let header: Header;
   let accountMenu: AccountMenu;
 
-  test.beforeEach(async ({ page, browser }) => {
-    base = new Base(page, browser);
-    header = new Header(page, browser);
-    accountMenu = new AccountMenu(page, browser);
+  test.beforeEach(async ({ page }) => {
+    base = new Base(page);
+    header = new Header(page);
+    accountMenu = new AccountMenu(page);
 
     await base.navigate(`https://www.imdb.com/`);
   });

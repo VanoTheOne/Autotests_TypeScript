@@ -1,9 +1,9 @@
 import Base from '../base';
-import { Page, Browser } from '@playwright/test';
+import { Page } from '@playwright/test';
 
 export default class ProfilePage extends Base {
-  constructor(page: Page, browser: Browser) {
-    super(page, browser);
+  constructor(page: Page) {
+    super(page);
   }
 
   get editProfileButton() {

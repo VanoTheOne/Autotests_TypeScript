@@ -2,11 +2,9 @@ import { Page, Browser } from '@playwright/test';
 
 export default class Base {
   public page: Page;
-  public browser: Browser;
 
-  constructor(page: Page, browser: Browser) {
+  constructor(page: Page) {
     this.page = page;
-    this.browser = browser;
   }
 
   async navigate(url: string): Promise<void> {

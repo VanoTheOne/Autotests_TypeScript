@@ -2,8 +2,8 @@ import Base from '../base';
 import { Page, Browser } from '@playwright/test';
 
 export default class Header extends Base {
-  constructor(page: Page, browser: Browser) {
-    super(page, browser);
+  constructor(page: Page) {
+    super(page);
   }
 
   get signInButton() {
