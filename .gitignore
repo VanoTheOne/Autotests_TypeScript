@@ -7,3 +7,4 @@ blob-report
 allure-report/
 allure-results/
 .github/chatmodes
+**/env.ts
