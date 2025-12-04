@@ -34,7 +34,7 @@ test.describe(`User profile page tests`, function () {
   //     const newUserBio = `Playwright`;
   //     await editProfilePage.changeUserBio(newUserBio);
   //     await editProfilePage.backToUserProfile();
-  //     await expect(await profilePage.userBio).toHaveText(newUserBio);
+  //     await expect(profilePage.userBio).toHaveText(newUserBio);
   //   });
   // });
 

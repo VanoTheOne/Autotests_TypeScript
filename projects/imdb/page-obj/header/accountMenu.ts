@@ -1,5 +1,5 @@
 import Base from '../base';
-import { Page, Browser } from '@playwright/test';
+import { Page } from '@playwright/test';
 
 export default class AccountMenu extends Base {
   constructor(page: Page) {
