@@ -27,7 +27,7 @@ export default class EditProfilePage extends Base {
   }
 
   get saveChangesButton() {
-    return this.page.locator('[data-testid="user-info-username-prompt"] [data-testid="prompt-saveButton"]');
+    return this.page.locator('[data-testid="prompt-saveButton"]');
   }
 
   get backButton() {
