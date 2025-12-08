@@ -23,7 +23,7 @@ test.describe(`User profile page tests`, function () {
     test(`Should check if username is changed`, async ({ page }) => {
       await accountMenu.openUserProfile();
       await profilePage.openEditProfilePage();
-      const newUsername = `Ivan-66666`;
+      const newUsername = `Ivan-6666`;
       await editProfilePage.changeUsername(newUsername);
       await editProfilePage.backToUserProfile();
       await expect(page).toHaveTitle(`${newUsername}'s Profile - IMDb`);
@@ -31,7 +31,7 @@ test.describe(`User profile page tests`, function () {
     test(`Should check if user Bio is changed`, async ({ page }) => {
       await accountMenu.openUserProfile();
       await profilePage.openEditProfilePage();
-      const newUserBio = `Playwright11`;
+      const newUserBio = `Playwright1`;
       await editProfilePage.changeUserBio(newUserBio);
       await editProfilePage.backToUserProfile();
       await expect(profilePage.userBio).toHaveText(newUserBio);

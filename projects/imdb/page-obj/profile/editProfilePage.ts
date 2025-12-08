@@ -50,23 +50,26 @@ export default class EditProfilePage extends Base {
     return this.page.locator('[role="dialog"]');
   }
 
+  get profileImageDialog() {
+    return this.page.locator('[data-testid="promptable"]');
+  }
+
   async changeUsername(newUsername: string) {
     await this.page.waitForTimeout(2000);
-    // await this.editUsernameButton.waitForElementState({ state: 'enabled' });
     await this.editUsernameButton.click();
-    // await this.editUsernameDialog.waitFor({ state: 'visible' });
     await this.usernameInputField.click();
     await this.usernameInputField.fill(newUsername);
     await this.saveChangesButton.click();
+    await this.profileImageDialog.waitFor({ state: 'detached' });
   }
 
   async changeUserBio(newUserBio: string) {
     await this.page.waitForTimeout(2000);
     await this.editUserBioButton.click();
-    await this.editUsernameDialog.waitFor({ state: 'visible' });
     await this.userBioInputField.click();
     await this.userBioInputField.fill(newUserBio);
     await this.saveChangesButton.click();
+    await this.profileImageDialog.waitFor({ state: 'detached' });
   }
 
   async backToUserProfile() {
@@ -77,12 +80,13 @@ export default class EditProfilePage extends Base {
     await this.page.waitForTimeout(2000);
     await this.uploadImageButton.setInputFiles(imagePath);
     await this.saveProfileImageButton.click();
-    await this.page.waitForTimeout(5000);
+    await this.profileImageDialog.waitFor({ state: 'detached' });
   }
 
   async deleteProgileImage() {
     await this.page.waitForTimeout(2000);
     await this.deleteImageButton.click();
     await this.saveChangesButton.click();
+    await this.profileImageDialog.waitFor({ state: 'detached' });
   }
 }
