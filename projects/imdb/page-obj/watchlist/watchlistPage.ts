@@ -33,6 +33,7 @@ export default class WatchlistPage extends Base {
   async addMovieToWatchlist() {
     await this.editWatchlistButton.click();
     await this.page.waitForTimeout(2000);
+    await this.searchTitleInputField.click();
     await this.searchTitleInputField.fill('Blade Runner 2049');
     await this.page.getByLabel('Blade Runner 2049 (2017)', { exact: true }).click();
   }
