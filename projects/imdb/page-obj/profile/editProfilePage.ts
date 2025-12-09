@@ -58,18 +58,35 @@ export default class EditProfilePage extends Base {
     await this.page.waitForTimeout(2000);
     await this.editUsernameButton.click();
     await this.usernameInputField.click();
-    await this.usernameInputField.fill(newUsername);
+    
+    const currentValue = await this.usernameInputField.inputValue();
+    
+    let usernameToSet = newUsername;
+    if (currentValue === newUsername) {
+      usernameToSet = newUsername + '6';
+    }
+    
+    await this.usernameInputField.fill(usernameToSet);
     await this.saveChangesButton.click();
     await this.profileImageDialog.waitFor({ state: 'detached' });
+    return usernameToSet;
   }
 
   async changeUserBio(newUserBio: string) {
     await this.page.waitForTimeout(2000);
     await this.editUserBioButton.click();
     await this.userBioInputField.click();
-    await this.userBioInputField.fill(newUserBio);
+
+    const currentBio = await this.userBioInputField.inputValue();
+
+    let bioToSet = newUserBio;
+    if (currentBio === newUserBio) {
+      bioToSet = newUserBio + '1';
+    }
+    await this.userBioInputField.fill(bioToSet);
     await this.saveChangesButton.click();
     await this.profileImageDialog.waitFor({ state: 'detached' });
+    return bioToSet;
   }
 
   async backToUserProfile() {

@@ -24,17 +24,17 @@ test.describe(`User profile page tests`, function () {
       await accountMenu.openUserProfile();
       await profilePage.openEditProfilePage();
       const newUsername = `Ivan-6666`;
-      await editProfilePage.changeUsername(newUsername);
+      const actualUsername = await editProfilePage.changeUsername(newUsername);
       await editProfilePage.backToUserProfile();
-      await expect(page).toHaveTitle(`${newUsername}'s Profile - IMDb`);
+      await expect(page).toHaveTitle(`${actualUsername}'s Profile - IMDb`);
     });
     test(`Should check if user Bio is changed`, async ({ page }) => {
       await accountMenu.openUserProfile();
       await profilePage.openEditProfilePage();
       const newUserBio = `Playwright1`;
-      await editProfilePage.changeUserBio(newUserBio);
+      const actualUserBio = await editProfilePage.changeUserBio(newUserBio);
       await editProfilePage.backToUserProfile();
-      await expect(profilePage.userBio).toHaveText(newUserBio);
+      await expect(profilePage.userBio).toHaveText(`${actualUserBio}`);
     });
     test(`Should check if user profile image is uploaded`, async ({ page }) => {
       await accountMenu.openUserProfile();
